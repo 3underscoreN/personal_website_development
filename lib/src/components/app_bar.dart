@@ -96,7 +96,6 @@ class _LightDarkSwitchState extends ConsumerState<LightDarkSwitch> {
         
         buttonState = asyncState.value!;
         isGotData = true;
-        print("isGotData, buttonState = $buttonState");
       }
       return DayNightSwitcherIcon(
         isDarkModeEnabled: buttonState,
@@ -104,11 +103,9 @@ class _LightDarkSwitchState extends ConsumerState<LightDarkSwitch> {
           if (isDarkModeEnabled) {
             AdaptiveTheme.of(context).setDark();
             buttonState = true;
-            print("Set to dark");
           } else {
             AdaptiveTheme.of(context).setLight();
             buttonState = false;
-            print("Set to light");
           }
         },
       );
