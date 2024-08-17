@@ -7,7 +7,6 @@ final isDarkProvider = FutureProvider<bool>(
   (ref) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final underlyingJSON = jsonDecode(prefs.getString("adaptive_theme_preferences") ?? "{\"theme_mode\":0,\"default_theme_mode\":0}");
-    print(prefs.getKeys());
     return underlyingJSON["theme_mode"] == 1;
   }
 );
