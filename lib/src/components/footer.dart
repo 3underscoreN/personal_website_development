@@ -33,6 +33,7 @@ class Footer extends StatelessWidget {
                   textStyle:
                       const TextStyle(fontSize: 16, color: Colors.white),
                 ),
+                softWrap: true,
               ),
               const SizedBox(height: 8),
               Row(

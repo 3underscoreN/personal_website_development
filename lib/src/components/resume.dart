@@ -74,7 +74,7 @@ class Resume extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5,
+                  width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0 ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 : 0,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -159,7 +159,7 @@ class Resume extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5,
+                  width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0 ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 : 0,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
