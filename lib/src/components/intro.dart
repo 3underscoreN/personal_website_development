@@ -17,7 +17,8 @@ class Intro extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: const EdgeInsets.fromLTRB(64.0, 128.0 + 65.0, 16.0, 128.0),
+              padding:
+                  const EdgeInsets.fromLTRB(64.0, 128.0 + 65.0, 16.0, 128.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -27,7 +28,10 @@ class Intro extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 64,
                         fontWeight: FontWeight.bold,
-                        color: AdaptiveTheme.of(context).theme.colorScheme.onPrimary,
+                        color: AdaptiveTheme.of(context)
+                            .theme
+                            .colorScheme
+                            .onPrimary,
                       ),
                     ),
                   ),
@@ -39,7 +43,10 @@ class Intro extends StatelessWidget {
                           textStyle: TextStyle(
                             fontSize: 64,
                             fontWeight: FontWeight.bold,
-                            color: AdaptiveTheme.of(context).theme.colorScheme.onPrimary,
+                            color: AdaptiveTheme.of(context)
+                                .theme
+                                .colorScheme
+                                .onPrimary,
                           ),
                         ),
                       ),
@@ -48,7 +55,10 @@ class Intro extends StatelessWidget {
                           textStyle: TextStyle(
                             fontSize: 64,
                             fontWeight: FontWeight.bold,
-                            color: AdaptiveTheme.of(context).theme.colorScheme.secondary,
+                            color: AdaptiveTheme.of(context)
+                                .theme
+                                .colorScheme
+                                .secondary,
                           ),
                         ),
                         child: AnimatedTextKit(
@@ -63,8 +73,8 @@ class Intro extends StatelessWidget {
                                 speed: const Duration(milliseconds: 200),
                                 cursor: "|"),
                             TypewriterAnimatedText("companion.",
-                            speed: const Duration(milliseconds: 200),
-                            cursor: "|"),
+                                speed: const Duration(milliseconds: 200),
+                                cursor: "|"),
                           ],
                           repeatForever: true,
                           pause: const Duration(milliseconds: 3000),
@@ -75,11 +85,13 @@ class Intro extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 128.0, 0.0),
-              child: const PersonalImage(),
-            ),
+            MediaQuery.of(context).size.width >= 1127
+                ? Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 64.0, 0.0),
+                    child: const PersonalImage(),
+                  )
+                : Container(),
           ],
         ),
       ),

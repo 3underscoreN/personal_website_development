@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:personal_website/src/theme/light_theme.dart';
 import 'package:personal_website/src/theme/dark_theme.dart';
 
@@ -19,7 +21,7 @@ import 'package:personal_website/src/components/footer.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  runApp(MyApp(savedThemeMode: savedThemeMode));
+  runApp(ProviderScope(child: MyApp(savedThemeMode: savedThemeMode)));
 }
 
 class MyApp extends StatelessWidget {

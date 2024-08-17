@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:personal_website/src/controllers/scroll_controllers.dart';
+
+import 'package:day_night_switcher/day_night_switcher.dart';
+
+import 'package:personal_website/src/providers/theme_state_provider.dart';
 
 final AppBar websiteAppBar = AppBar(
   backgroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -20,9 +25,9 @@ final AppBar websiteAppBar = AppBar(
       LogoButton(),
     ],
   ),
-  actions: [
-    
-    const Padding(padding: EdgeInsets.fromLTRB(1.0, 1.0, 48.0, 1.0)),
+  actions: const [
+    LightDarkSwitch(),
+    Padding(padding: EdgeInsets.fromLTRB(1.0, 1.0, 48.0, 1.0)),
   ],
 );
 
@@ -71,17 +76,49 @@ class LogoButton extends StatelessWidget {
   }
 }
 
-// class LightDarkSwitch extends StatefulWidget {
-//   const LightDarkSwitch({super.key});
+class LightDarkSwitch extends ConsumerStatefulWidget {
+  const LightDarkSwitch({super.key});
 
-//   @override
-//   State<LightDarkSwitch> createState() => _LightDarkSwitchState();
-// }
+  @override
+  ConsumerState<LightDarkSwitch> createState() => _LightDarkSwitchState();
+}
 
-// class _LightDarkSwitchState extends State<LightDarkSwitch> {
-//   @override
-//   Widget build(BuildContext context) {
-    
-//   }
-// }
+class _LightDarkSwitchState extends ConsumerState<LightDarkSwitch> {
 
+  late bool buttonState;
+  bool isGotData = false;
+
+  @override
+  Widget build(BuildContext context) {
+    AsyncValue<bool> asyncState = ref.watch(isDarkProvider);
+    if (asyncState is AsyncData) {
+      if (!isGotData) {
+        
+        buttonState = asyncState.value!;
+        isGotData = true;
+        print("isGotData, buttonState = $buttonState");
+      }
+      return DayNightSwitcherIcon(
+        isDarkModeEnabled: buttonState,
+        onStateChanged: (isDarkModeEnabled) {
+          if (isDarkModeEnabled) {
+            AdaptiveTheme.of(context).setDark();
+            buttonState = true;
+            print("Set to dark");
+          } else {
+            AdaptiveTheme.of(context).setLight();
+            buttonState = false;
+            print("Set to light");
+          }
+        },
+      );
+    }
+    if (asyncState is AsyncError) {
+      return Icon(
+        Icons.error_outline,
+        color: AdaptiveTheme.of(context).theme.colorScheme.error,
+      );
+    }
+    return const CircularProgressIndicator();
+  }
+}
