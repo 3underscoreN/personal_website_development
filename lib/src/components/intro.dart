@@ -17,7 +17,7 @@ class Intro extends StatelessWidget {
           children: [
             const PersonalImage(),
             Container(
-              margin: const EdgeInsets.fromLTRB(64.0, 128.0, 16.0, 128.0),
+              margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width > 600 ? 64.0 : 16.0, 128.0, 16.0, 128.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -27,7 +27,7 @@ class Intro extends StatelessWidget {
                       "Hi, I'm Kelvin.",
                       style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
-                          fontSize: 64,
+                          fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
                           fontWeight: FontWeight.bold,
                           color: AdaptiveTheme.of(context)
                               .theme
@@ -47,7 +47,7 @@ class Intro extends StatelessWidget {
                           "I'm a ",
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
-                              fontSize: 64,
+                              fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
                               fontWeight: FontWeight.bold,
                               color: AdaptiveTheme.of(context)
                                   .theme
@@ -60,7 +60,7 @@ class Intro extends StatelessWidget {
                       DefaultTextStyle(
                         style: GoogleFonts.dmSerifText(
                           textStyle: TextStyle(
-                            fontSize: 64,
+                            fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
                             fontWeight: FontWeight.bold,
                             color: AdaptiveTheme.of(context)
                                 .theme

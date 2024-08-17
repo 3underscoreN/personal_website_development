@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
     return AdaptiveTheme(
       light: lightTheme,
       dark: darkTheme,
-      debugShowFloatingThemeButton: true, //TODO
       initial: savedThemeMode ?? AdaptiveThemeMode.light,
       builder: (theme, darkTheme) => MaterialApp(
         title: 'Kelvin\'s Personal Website',
