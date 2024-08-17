@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -100,61 +102,26 @@ class About extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 36),
-          RichText(
-            text: TextSpan(
-              text:
-                  "I'm currently an undergraduate student studying computer science with an extended major in\n\n",
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+          Container(
+            padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width - 48 * 2 > 0 ? MediaQuery.of(context).size.width - 48 * 2 : 0,
+              child: Text(
+                "I'm currently an undergraduate student studying computer science with an extended major in Artificial Intelligence. I couldn't say I'm good at programming, but I do enjoy the process of creating stuff and apps for people, hence I picked up this \"career\". I'm also interested in games (especially rhythm games!). Recently, I've been learning about depression disorders and how to live with friends who have self-harm behaviors.",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                  ),
                 ),
               ),
-              children: <TextSpan>[
-                TextSpan(
-                  text:
-                      "Artificial Intelligence. I couldn't say I'm good at programming, but I do enjoy the process of \n\n",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-                TextSpan(
-                  text:
-                      "creating stuff and apps for people, hence I picked up this \"career\".  I'm also interested in games\n\n",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-                TextSpan(
-                  text:
-                      "(especially rhythm games!). Recently, I've been learning about depression disorders and how to\n\n",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-                TextSpan(
-                  text: "live with friends who have self-harm behaviors.\n\n",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-              ],
             ),
-          ),
+          )
         ],
       ),
     );
   }
 }
+/* 
+I'm currently an undergraduate student studying computer science with an extended major in Artificial Intelligence. I couldn't say I'm good at programming, but I do enjoy the process of creating stuff and apps for people, hence I picked up this "career". I'm also interested in games (especially rhythm games!). Recently, I've been learning about depression disorders and how to live with friends who have self-harm behaviors.
+*/
