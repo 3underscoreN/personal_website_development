@@ -18,6 +18,8 @@ import 'package:personal_website/src/components/about.dart';
 import 'package:personal_website/src/components/resume.dart';
 import 'package:personal_website/src/components/footer.dart';
 
+import 'package:animated_snack_bar/animated_snack_bar.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
@@ -55,6 +57,25 @@ class HomeScrollView extends StatefulWidget {
 class _HomeScrollViewState extends State<HomeScrollView> {
 
   static const List<Widget> viewList = [Intro(), About(), Resume(), Footer()];
+
+  @override
+  void initState() {
+    super.initState();
+    if (true) {
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) {
+          AnimatedSnackBar.material(
+            "Welcome to 3_n's personal website!\nThis website is still under heavy development >_<\nSorry for the mess! T_T", 
+            duration: const Duration(seconds: 5), 
+            animationDuration: const Duration(milliseconds: 300),
+            animationCurve: Curves.easeInOut,
+            type: AnimatedSnackBarType.info,
+            desktopSnackBarPosition: DesktopSnackBarPosition.bottomRight,
+          ).show(context);
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
