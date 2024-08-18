@@ -56,7 +56,7 @@ class LogoButton extends StatelessWidget {
                   ..style = PaintingStyle.stroke
                   ..strokeWidth = 2
                   ..color =
-                      AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                      AdaptiveTheme.of(context).theme.colorScheme.surface,
               ),
             ),
           ),
@@ -66,7 +66,7 @@ class LogoButton extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: AdaptiveTheme.of(context).theme.colorScheme.surface,
+                color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
               ),
             ),
           ),

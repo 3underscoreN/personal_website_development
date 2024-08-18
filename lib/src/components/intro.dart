@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 
+import 'package:personal_website/src/theme/light_theme.dart';
+import 'package:personal_website/src/theme/dark_theme.dart';
+
 class Intro extends StatelessWidget {
   const Intro({super.key});
 
@@ -12,7 +15,9 @@ class Intro extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Container(
-        color: AdaptiveTheme.of(context).theme.colorScheme.primary,
+        decoration: AdaptiveTheme.of(context).theme.brightness == Brightness.light
+            ? lightThemeBackground
+            : darkThemeBackground,
         child: Stack(
           children: [
             const PersonalImage(),
