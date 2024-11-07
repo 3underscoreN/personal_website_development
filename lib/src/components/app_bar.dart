@@ -48,7 +48,7 @@ class LogoButton extends StatelessWidget {
         children: <Widget>[
           Text(
             '3_n',
-            style: GoogleFonts.montserrat(
+            style: GoogleFonts.dmSerifText(
               textStyle: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class LogoButton extends StatelessWidget {
           ),
           Text(
             '3_n',
-            style: GoogleFonts.montserrat(
+            style: GoogleFonts.dmSerifText(
               textStyle: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
