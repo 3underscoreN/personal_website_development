@@ -157,12 +157,12 @@ class TwoColumnResume extends StatelessWidget {
                       description:
                           "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
                     ),
-                    SizedBox(height: 8),
+                    Divider(),
                     ResumeEntry(
                         title: "Exchange Student",
                         subtitle: "National Taiwan University / 2024 Fall",
                         description: "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
-                    SizedBox(height: 8),
+                    Divider(),
                     ResumeEntry(
                       title: "High School",
                       subtitle: "TWGHs Li Ka Shing College / 2016 - 2022",
@@ -186,7 +186,7 @@ class TwoColumnResume extends StatelessWidget {
                       description:
                           "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
                     ),
-                    SizedBox(height: 8),
+                    Divider(),
                     ResumeEntry(
                       title: "Part time student helper",
                       subtitle:
@@ -194,7 +194,7 @@ class TwoColumnResume extends StatelessWidget {
                       description:
                           "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
                     ),
-                    SizedBox(height: 8),
+                    Divider(),
                     ResumeEntry(
                       title: "Map Admin",
                       subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
@@ -242,7 +242,12 @@ class OneColumnResume extends StatelessWidget {
           description:
               "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
         ),
-        const SizedBox(height: 16),
+        const Divider(),
+        const ResumeEntry(
+                        title: "Exchange Student",
+                        subtitle: "National Taiwan University / 2024 Fall",
+                        description: "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
+        const Divider(),
         const ResumeEntry(
           title: "High School",
           subtitle: "TWGHs Li Ka Shing College / 2016 - 2022",
@@ -271,7 +276,7 @@ class OneColumnResume extends StatelessWidget {
           description:
               "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
         ),
-        const SizedBox(height: 16),
+        const Divider(),
         const ResumeEntry(
           title: "Part time student helper",
           subtitle:
@@ -279,7 +284,7 @@ class OneColumnResume extends StatelessWidget {
           description:
               "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
         ),
-        const SizedBox(height: 16),
+        const Divider(),
         const ResumeEntry(
           title: "Map Admin",
           subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
