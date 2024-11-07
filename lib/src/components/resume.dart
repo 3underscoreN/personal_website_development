@@ -153,10 +153,15 @@ class TwoColumnResume extends StatelessWidget {
                     ResumeEntry(
                       title: "BEng in Computer Science",
                       subtitle:
-                          "The Hong Kong University of Science and Technology / 2022 - 2026 (Per.)",
+                          "The Hong Kong University of Science and Technology / 2022 - 2026 (Pre.)",
                       description:
                           "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
                     ),
+                    SizedBox(height: 8),
+                    ResumeEntry(
+                        title: "Exchange Student",
+                        subtitle: "National Taiwan University / 2024 Fall",
+                        description: "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
                     SizedBox(height: 8),
                     ResumeEntry(
                       title: "High School",
