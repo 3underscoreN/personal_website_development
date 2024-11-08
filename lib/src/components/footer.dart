@@ -41,18 +41,10 @@ class Footer extends StatelessWidget {
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Made with <3 by 3_n",
-                            style: GoogleFonts.montserrat(
-                              textStyle: const TextStyle(
-                                  fontSize: 16, color: Colors.white),
-                            ),
-                            softWrap: true,
-                          ),
                           Row(
                             children: [
                               Text(
-                                "w/ ",
+                                "Made with <3 by 3_n w/ ",
                                 style: GoogleFonts.montserrat(
                                   textStyle: const TextStyle(
                                       fontSize: 16, color: Colors.white),
@@ -61,6 +53,14 @@ class Footer extends StatelessWidget {
                               ),
                               const FlutterLogo(),
                             ],
+                          ),
+                          Text(
+                            "Hosted on GitHub Pages",
+                            style: GoogleFonts.montserrat(
+                              textStyle: const TextStyle(
+                                  fontSize: 16, color: Colors.white),
+                            ),
+                            softWrap: true,
                           ),
                         ],
                       ),
