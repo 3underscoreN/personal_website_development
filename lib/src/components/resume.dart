@@ -33,21 +33,21 @@ class Resume extends StatelessWidget {
     ResumeEntry(
       title: "Full time student helper",
       subtitle:
-          "Undergraduate Recruitment and Admissions Office, HKUST / 2023 - 2024",
+          "Undergraduate Recruitment and Admissions Office, HKUST / Jun 2023 - Aug 2023, Jun 2024 - Aug 2024",
       description:
           "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
     ),
     Divider(),
     ResumeEntry(
       title: "Part time student helper",
-      subtitle: "Information Technology Services Center, HKUST / 2023 - 2024",
+      subtitle: "Information Technology Services Center, HKUST / Sep 2023 - May 2024",
       description:
           "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
     ),
     Divider(),
     ResumeEntry(
       title: "Map Admin",
-      subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
+      subtitle: "PathAdvisor Team, HKUST / Sep 2022 - Jun 2023",
       description:
           "Map managment. Maintaining the campus map for mobile and web platform. Collaborate with developers and art designers to correct inconsistent maps.",
     ),
