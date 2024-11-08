@@ -6,6 +6,53 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 class Resume extends StatelessWidget {
   const Resume({super.key});
 
+  static const List<Widget> educationResumeEntry = [
+    ResumeEntry(
+      title: "BEng in Computer Science",
+      subtitle:
+          "The Hong Kong University of Science and Technology / 2022 - 2026 (Pre.)",
+      description:
+          "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
+    ),
+    Divider(),
+    ResumeEntry(
+        title: "Exchange Student",
+        subtitle: "National Taiwan University / 2024 Fall",
+        description:
+            "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
+    Divider(),
+    ResumeEntry(
+      title: "High School",
+      subtitle: "TWGHs Li Ka Shing College / 2016 - 2022",
+      description:
+          "Highschool that enlightens my interest in computer science and programming, then pushes me into the rabbit hole of the computing industry.",
+    ),
+  ];
+
+  static const List<Widget> experienceResumeEntry = [
+    ResumeEntry(
+      title: "Full time student helper",
+      subtitle:
+          "Undergraduate Recruitment and Admissions Office, HKUST / 2023 - 2024",
+      description:
+          "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
+    ),
+    Divider(),
+    ResumeEntry(
+      title: "Part time student helper",
+      subtitle: "Information Technology Services Center, HKUST / 2023 - 2024",
+      description:
+          "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
+    ),
+    Divider(),
+    ResumeEntry(
+      title: "Map Admin",
+      subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
+      description:
+          "Map managment. Maintaining the campus map for mobile and web platform. Collaborate with developers and art designers to correct inconsistent maps.",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,8 +88,14 @@ class Resume extends StatelessWidget {
             ),
           ),
           MediaQuery.of(context).size.width > 600
-              ? const TwoColumnResume()
-              : const OneColumnResume(),
+              ? const TwoColumnResume(
+                  educationEntries: educationResumeEntry,
+                  experienceEntries: experienceResumeEntry,
+                )
+              : const OneColumnResume(
+                  educationEntries: educationResumeEntry,
+                  experienceEntries: experienceResumeEntry,
+                ),
         ],
       ),
     );
@@ -103,7 +156,13 @@ class ResumeEntry extends StatelessWidget {
 }
 
 class TwoColumnResume extends StatelessWidget {
-  const TwoColumnResume({super.key});
+  const TwoColumnResume(
+      {super.key,
+      required this.educationEntries,
+      required this.experienceEntries});
+
+  final List<Widget> educationEntries;
+  final List<Widget> experienceEntries;
 
   @override
   Widget build(BuildContext context) {
@@ -147,61 +206,18 @@ class TwoColumnResume extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0
                     ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5
                     : 0,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ResumeEntry(
-                      title: "BEng in Computer Science",
-                      subtitle:
-                          "The Hong Kong University of Science and Technology / 2022 - 2026 (Pre.)",
-                      description:
-                          "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
-                    ),
-                    Divider(),
-                    ResumeEntry(
-                        title: "Exchange Student",
-                        subtitle: "National Taiwan University / 2024 Fall",
-                        description: "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
-                    Divider(),
-                    ResumeEntry(
-                      title: "High School",
-                      subtitle: "TWGHs Li Ka Shing College / 2016 - 2022",
-                      description:
-                          "Highschool that enlightens my interest in computer science and programming, then pushes me into the rabbit hole of the computing industry.",
-                    ),
-                  ],
+                  children: educationEntries,
                 ),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0
                     ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5
                     : 0,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ResumeEntry(
-                      title: "Full time student helper",
-                      subtitle:
-                          "Undergraduate Recruitment and Admissions Office, HKUST / 2023 - 2024",
-                      description:
-                          "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
-                    ),
-                    Divider(),
-                    ResumeEntry(
-                      title: "Part time student helper",
-                      subtitle:
-                          "Information Technology Services Center, HKUST / 2023 - 2024",
-                      description:
-                          "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
-                    ),
-                    Divider(),
-                    ResumeEntry(
-                      title: "Map Admin",
-                      subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
-                      description:
-                          "Map managment. Maintaining the campus map for mobile and web platform. Collaborate with developers and art designers to correct inconsistent maps.",
-                    ),
-                  ],
+                  children: experienceEntries,
                 ),
               ),
             ],
@@ -213,7 +229,13 @@ class TwoColumnResume extends StatelessWidget {
 }
 
 class OneColumnResume extends StatelessWidget {
-  const OneColumnResume({super.key});
+  const OneColumnResume(
+      {super.key,
+      required this.educationEntries,
+      required this.experienceEntries});
+
+  final List<Widget> educationEntries;
+  final List<Widget> experienceEntries;
 
   @override
   Widget build(BuildContext context) {
@@ -235,25 +257,7 @@ class OneColumnResume extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        const ResumeEntry(
-          title: "BEng in Computer Science",
-          subtitle:
-              "The Hong Kong University of Science and Technology / 2022 - 2026 (Pre.)",
-          description:
-              "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
-        ),
-        const Divider(),
-        const ResumeEntry(
-                        title: "Exchange Student",
-                        subtitle: "National Taiwan University / 2024 Fall",
-                        description: "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
-        const Divider(),
-        const ResumeEntry(
-          title: "High School",
-          subtitle: "TWGHs Li Ka Shing College / 2016 - 2022",
-          description:
-              "Highschool that enlightens my interest in computer science and programming, then pushes me into the rabbit hole of the computing industry.",
-        ),
+        ...educationEntries,
         const SizedBox(height: 16),
         Container(
           alignment: Alignment.center,
@@ -269,28 +273,7 @@ class OneColumnResume extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        const ResumeEntry(
-          title: "Full time student helper",
-          subtitle:
-              "Undergraduate Recruitment and Admissions Office, HKUST / 2023 - 2024",
-          description:
-              "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
-        ),
-        const Divider(),
-        const ResumeEntry(
-          title: "Part time student helper",
-          subtitle:
-              "Information Technology Services Center, HKUST / 2023 - 2024",
-          description:
-              "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
-        ),
-        const Divider(),
-        const ResumeEntry(
-          title: "Map Admin",
-          subtitle: "PathAdvisor Team, HKUST / 2022 - 2023",
-          description:
-              "Map managment. Maintaining the campus map for mobile and web platform. Collaborate with developers and art designers to correct inconsistent maps.",
-        ),
+        ...experienceEntries,
       ],
     );
   }
