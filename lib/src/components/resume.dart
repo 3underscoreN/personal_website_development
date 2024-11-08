@@ -238,7 +238,7 @@ class OneColumnResume extends StatelessWidget {
         const ResumeEntry(
           title: "BEng in Computer Science",
           subtitle:
-              "The Hong Kong University of Science and Technology / 2022 - 2026 (Per.)",
+              "The Hong Kong University of Science and Technology / 2022 - 2026 (Pre.)",
           description:
               "4 years of intensive learning, in which I aim to learn as much as I can about computer science, while trying to stay healthy mentally.",
         ),
