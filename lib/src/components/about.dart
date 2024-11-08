@@ -28,75 +28,81 @@ class About extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          RichText(
-            text: TextSpan(
-              text: "Hello, I am ",
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+          Container(
+            padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+            child: RichText(
+              text: TextSpan(
+                text: "Hello, I am ",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                  ),
                 ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: "Kelvin, CHAN",
+                    style: GoogleFonts.dmSerifText(
+                      textStyle: TextStyle(
+                        fontSize: 32,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.secondary,
+                      ),
+                    ),
+                  ),
+                  TextSpan(
+                    text: ".",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                        fontSize: 28,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: "Kelvin, CHAN",
-                  style: GoogleFonts.dmSerifText(
-                    textStyle: TextStyle(
-                      fontSize: 32,
-                      color:
-                          AdaptiveTheme.of(context).theme.colorScheme.secondary,
-                    ),
-                  ),
-                ),
-                TextSpan(
-                  text: ".",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 28,
-                      color:
-                          AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-              ],
             ),
           ),
           const SizedBox(height: 12),
-          RichText(
-            text: TextSpan(
-              text: "I'm also known as ",
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+          Container(
+            padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 0.0),
+            child: RichText(
+              text: TextSpan(
+                text: "I'm also known as ",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                  ),
                 ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: "3_n",
+                    style: GoogleFonts.dmSerifText(
+                      textStyle: TextStyle(
+                        fontSize: 32,
+                        wordSpacing: 1.2,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.secondary,
+                      ),
+                    ),
+                  ),
+                  TextSpan(
+                    text: " online.",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: "3_n",
-                  style: GoogleFonts.dmSerifText(
-                    textStyle: TextStyle(
-                      fontSize: 32,
-                      wordSpacing: 1.2,
-                      color:
-                          AdaptiveTheme.of(context).theme.colorScheme.secondary,
-                    ),
-                  ),
-                ),
-                TextSpan(
-                  text: " online.",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color:
-                          AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-              ],
             ),
           ),
           const SizedBox(height: 36),
