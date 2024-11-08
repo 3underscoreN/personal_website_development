@@ -25,6 +25,7 @@ const darkThemeBackground = BoxDecoration(
     end: Alignment.bottomRight,
     colors: [
       Color.fromARGB(255, 56, 112, 94),
+      Color.fromARGB(255, 56, 112, 94),
       Color.fromARGB(255, 77, 204, 142),
       // Color.fromARGB(255, 255, 203, 247),
       // Color.fromARGB(255, 255, 236, 252)
