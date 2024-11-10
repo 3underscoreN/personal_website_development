@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
+import 'dart:math';
+
 class Resume extends StatelessWidget {
   const Resume({super.key});
 
@@ -19,7 +21,7 @@ class Resume extends StatelessWidget {
         title: "Exchange Student",
         subtitle: "National Taiwan University / 2024 Fall",
         description:
-            "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on EE, and auditing transportation engineering as a side hobby."),
+            "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on electricty, and auditing transportation engineering as a side hobby."),
     Divider(),
     ResumeEntry(
       title: "High School",
@@ -33,14 +35,15 @@ class Resume extends StatelessWidget {
     ResumeEntry(
       title: "Full time student helper",
       subtitle:
-          "Undergraduate Recruitment and Admissions Office, HKUST / Jun 2023 - Aug 2023, Jun 2024 - Aug 2024",
+          "Undergraduate Recruitment and Admissions Office, HKUST / Jun - Aug 2023 & 2024",
       description:
           "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
     ),
     Divider(),
     ResumeEntry(
       title: "Part time student helper",
-      subtitle: "Information Technology Services Center, HKUST / Sep 2023 - May 2024",
+      subtitle:
+          "Information Technology Services Center, HKUST / Sep 2023 - May 2024",
       description:
           "IT Operations. Handling user requests on IT demands. Also maintains prints that are located all around the campus, changing toners and fixing jams.",
     ),
@@ -87,7 +90,7 @@ class Resume extends StatelessWidget {
               ),
             ),
           ),
-          MediaQuery.of(context).size.width > 600
+          MediaQuery.of(context).size.width > 700
               ? const TwoColumnResume(
                   educationEntries: educationResumeEntry,
                   experienceEntries: experienceResumeEntry,
@@ -124,7 +127,7 @@ class ResumeEntry extends StatelessWidget {
           style: GoogleFonts.montserrat(
             textStyle: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 22,
+              fontSize: 24,
               color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
             ),
           ),
@@ -134,6 +137,7 @@ class ResumeEntry extends StatelessWidget {
           softWrap: true,
           style: GoogleFonts.montserrat(
             textStyle: TextStyle(
+              fontWeight: FontWeight.bold,
               fontSize: 16,
               color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
             ),
@@ -164,15 +168,58 @@ class TwoColumnResume extends StatelessWidget {
   final List<Widget> educationEntries;
   final List<Widget> experienceEntries;
 
+  List<TableRow> verticalTableBuilder(
+      List<Widget> eduEntry, List<Widget> expEntry, BuildContext context) {
+    List<TableRow> result = [];
+    int counter = 0;
+    for (; counter < min(eduEntry.length, expEntry.length); counter++) {
+      result.add(
+        TableRow(
+          children: [
+            eduEntry[counter],
+            const SizedBox(width: 8),
+            expEntry[counter],
+          ],
+        ),
+      );
+    }
+
+    while (counter < eduEntry.length) {
+      result.add(
+        TableRow(
+          children: [
+            eduEntry[counter],
+            const SizedBox(width: 8),
+            const SizedBox(width: 1, height: 1),
+          ],
+        ),
+      );
+      counter++;
+    }
+
+    while (counter < expEntry.length) {
+      result.add(
+        TableRow(
+          children: [
+            const SizedBox(width: 1, height: 1),
+            const SizedBox(width: 8),
+            expEntry[counter],
+          ],
+        ),
+      );
+      counter++;
+    }
+
+    return result;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        const SizedBox(height: 16),
+      children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
+          children: [
             Text(
               "Education",
               style: GoogleFonts.montserrat(
@@ -188,7 +235,7 @@ class TwoColumnResume extends StatelessWidget {
               style: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   fontSize: 32,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
                 ),
               ),
@@ -196,32 +243,15 @@ class TwoColumnResume extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        Container(
-          padding: const EdgeInsets.all(24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0
-                    ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5
-                    : 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: educationEntries,
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 2 - 48 * 2 - 5 > 0
-                    ? MediaQuery.of(context).size.width / 2 - 48 * 2 - 5
-                    : 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: experienceEntries,
-                ),
-              ),
-            ],
-          ),
+        Table(
+          columnWidths: const {
+            0: FlexColumnWidth(),
+            1: FixedColumnWidth(8),
+            2: FlexColumnWidth(),
+          },
+          defaultVerticalAlignment: TableCellVerticalAlignment.top,
+          children: verticalTableBuilder(
+              educationEntries, experienceEntries, context),
         ),
       ],
     );
