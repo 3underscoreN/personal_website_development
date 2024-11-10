@@ -23,6 +23,7 @@ const lightThemeBackground = BoxDecoration(
     end: Alignment.bottomRight,
     colors: [
       Color.fromARGB(255, 77, 204, 142),
+      Color.fromARGB(255, 77, 204, 142),
       Color.fromARGB(255, 56, 112, 94),
       // Color.fromARGB(255, 125, 47, 113),
       // Color.fromARGB(255, 61, 10, 54),
