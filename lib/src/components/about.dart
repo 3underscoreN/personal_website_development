@@ -151,6 +151,3 @@ class About extends StatelessWidget {
     );
   }
 }
-/* 
-I'm currently an undergraduate student studying computer science with an extended major in Artificial Intelligence. I couldn't say I'm good at programming, but I do enjoy the process of creating stuff and apps for people, hence I picked up this "career". I'm also interested in games (especially rhythm games!). Recently, I've been learning about depression disorders and how to live with friends who have self-harm behaviors.
-*/
