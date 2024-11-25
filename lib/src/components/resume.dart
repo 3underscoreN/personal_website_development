@@ -235,7 +235,7 @@ class TwoColumnResume extends StatelessWidget {
               style: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   fontSize: 32,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.bold,
                   color: AdaptiveTheme.of(context).theme.colorScheme.onSurface,
                 ),
               ),
