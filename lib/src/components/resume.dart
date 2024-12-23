@@ -268,6 +268,17 @@ class OneColumnResume extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> eduR = [];
+    final List<Widget> expR = [];
+    for (Widget w in educationEntries) {
+      eduR.add(w);
+      eduR.add(const Divider());
+    }
+    for (Widget w in experienceEntries) {
+      expR.add(w);
+      expR.add(const Divider());
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -286,7 +297,7 @@ class OneColumnResume extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        ...educationEntries,
+        ...eduR,
         const SizedBox(height: 16),
         Container(
           alignment: Alignment.center,
@@ -302,7 +313,7 @@ class OneColumnResume extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        ...experienceEntries,
+        ...expR,
       ],
     );
   }
