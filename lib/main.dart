@@ -28,7 +28,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, AdaptiveThemeMode? savedThemeMode});
-  // This widget is the root of your application.
   final AdaptiveThemeMode? savedThemeMode = null;
   @override
   Widget build(BuildContext context) {

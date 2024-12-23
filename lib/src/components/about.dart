@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:personal_website/src/text/about_str.dart';
+
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -135,7 +137,7 @@ class About extends StatelessWidget {
                   ? MediaQuery.of(context).size.width - 48 * 2
                   : 0,
               child: Text(
-                "I'm currently an undergraduate student studying computer science with an extended major in Artificial Intelligence. I couldn't say I'm good at programming, but I do enjoy the process of creating stuff and apps for people, hence I picked up this \"career\". I'm also interested in games (especially rhythm games!). Recently, I've been learning about depression disorders and how to live with friends who have self-harm behaviors.",
+                introStrings["intro"]!,
                 style: GoogleFonts.montserrat(
                   textStyle: TextStyle(
                     fontSize: 18,
