@@ -17,7 +17,7 @@ My personal website hosted on [GitHub Pages](https://3underscoreN.github.io). Th
 
 In the root folder, run
 ```bash
-> flutter build web
+$ flutter build web
 ```
 A new folder `build/web` will be made and contains compiled data.
 
