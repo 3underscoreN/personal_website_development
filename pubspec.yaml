@@ -46,6 +46,7 @@ dependencies:
   popover: ^0.3.1
   day_night_switcher:
   animated_snack_bar: ^0.4.0
+  flutter_animate:
 
 dev_dependencies:
   flutter_test:

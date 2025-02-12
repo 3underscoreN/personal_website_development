@@ -113,6 +113,11 @@ class Intro extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              margin: const EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 20.0),
+              child: const AnimatedArrow(),
+            ),
           ],
         ),
       ),
@@ -132,6 +137,35 @@ class PersonalImage extends StatelessWidget {
         'assets/images/3_n.png',
         width: 400,
         height: 400,
+      ),
+    );
+  }
+}
+
+class AnimatedArrow extends StatelessWidget {
+  const AnimatedArrow({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Animate(
+      onPlay: (controller) => controller.repeat(reverse: true),
+      effects: [
+        FadeEffect(
+            begin: .2,
+            end: .9,
+            curve: Curves.easeInOutCubicEmphasized,
+            duration: 1000.ms),
+        MoveEffect(
+          begin: const Offset(0, 0),
+          end: const Offset(0, 10),
+          duration: 1000.ms,
+          curve: Curves.easeInOut,
+        )
+      ],
+      child: Icon(
+        Icons.keyboard_arrow_down,
+        size: 48,
+        color: Theme.of(context).colorScheme.secondary,
       ),
     );
   }
