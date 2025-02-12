@@ -51,7 +51,7 @@ class Footer extends StatelessWidget {
                                 ),
                                 softWrap: true,
                               ),
-                              const FlutterLogo(),
+                              // const FlutterLogo(),
                             ],
                           ),
                           Text(

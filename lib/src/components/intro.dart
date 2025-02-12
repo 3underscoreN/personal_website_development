@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 import 'package:personal_website/src/theme/light_theme.dart';
 import 'package:personal_website/src/theme/dark_theme.dart';
+
+import 'package:personal_website/src/text/intro_str.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -15,14 +18,19 @@ class Intro extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Container(
-        decoration: AdaptiveTheme.of(context).theme.brightness == Brightness.light
-            ? lightThemeBackground
-            : darkThemeBackground,
+        decoration:
+            AdaptiveTheme.of(context).theme.brightness == Brightness.light
+                ? lightThemeBackground
+                : darkThemeBackground,
         child: Stack(
           children: [
             const PersonalImage(),
             Container(
-              margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width > 600 ? 64.0 : 16.0, 128.0, 16.0, 128.0),
+              margin: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width > 600 ? 64.0 : 16.0,
+                  128.0,
+                  16.0,
+                  128.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -32,7 +40,9 @@ class Intro extends StatelessWidget {
                       "Hi, I'm Kelvin.",
                       style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
+                          fontSize: MediaQuery.of(context).size.width > 600
+                              ? 64
+                              : 64 * MediaQuery.of(context).size.width / 600,
                           fontWeight: FontWeight.bold,
                           color: AdaptiveTheme.of(context)
                               .theme
@@ -52,7 +62,11 @@ class Intro extends StatelessWidget {
                           "I'm a ",
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
-                              fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
+                              fontSize: MediaQuery.of(context).size.width > 600
+                                  ? 64
+                                  : 64 *
+                                      MediaQuery.of(context).size.width /
+                                      600,
                               fontWeight: FontWeight.bold,
                               color: AdaptiveTheme.of(context)
                                   .theme
@@ -65,7 +79,9 @@ class Intro extends StatelessWidget {
                       DefaultTextStyle(
                         style: GoogleFonts.dmSerifText(
                           textStyle: TextStyle(
-                            fontSize: MediaQuery.of(context).size.width > 600 ? 64 : 64 * MediaQuery.of(context).size.width / 600,
+                            fontSize: MediaQuery.of(context).size.width > 600
+                                ? 64
+                                : 64 * MediaQuery.of(context).size.width / 600,
                             fontWeight: FontWeight.bold,
                             color: AdaptiveTheme.of(context)
                                 .theme
@@ -78,20 +94,14 @@ class Intro extends StatelessWidget {
                           child: SizedBox(
                             width: 450,
                             child: AnimatedTextKit(
-                              animatedTexts: [
-                                TypewriterAnimatedText("student.",
-                                    speed: const Duration(milliseconds: 200),
-                                    cursor: "|"),
-                                TypewriterAnimatedText("programmer.",
-                                    speed: const Duration(milliseconds: 200),
-                                    cursor: "|"),
-                                TypewriterAnimatedText("gamer.",
-                                    speed: const Duration(milliseconds: 200),
-                                    cursor: "|"),
-                                TypewriterAnimatedText("companion.",
-                                    speed: const Duration(milliseconds: 200),
-                                    cursor: "|"),
-                              ],
+                              animatedTexts: indentites
+                                  .map((String text) => TypewriterAnimatedText(
+                                        "$text.",
+                                        speed:
+                                            const Duration(milliseconds: 200),
+                                        cursor: "|",
+                                      ))
+                                  .toList(),
                               repeatForever: true,
                               pause: const Duration(milliseconds: 3000),
                             ),
