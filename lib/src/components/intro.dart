@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:typewrite_text/typewrite_text.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,35 +76,34 @@ class Intro extends StatelessWidget {
                           ),
                         ),
                       ),
-                      DefaultTextStyle(
-                        style: GoogleFonts.dmSerifText(
-                          textStyle: TextStyle(
-                            fontSize: MediaQuery.of(context).size.width > 600
-                                ? 64
-                                : 64 * MediaQuery.of(context).size.width / 600,
-                            fontWeight: FontWeight.bold,
-                            color: AdaptiveTheme.of(context)
-                                .theme
-                                .colorScheme
-                                .secondary,
-                          ),
-                        ),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: SizedBox(
-                            width: 450,
-                            child: AnimatedTextKit(
-                              animatedTexts: indentites
-                                  .map((String text) => TypewriterAnimatedText(
-                                        "$text.",
-                                        speed:
-                                            const Duration(milliseconds: 200),
-                                        cursor: "|",
-                                      ))
-                                  .toList(),
-                              repeatForever: true,
-                              pause: const Duration(milliseconds: 3000),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: SizedBox(
+                          width: 450,
+                          child: TypewriteText(
+                            linesOfText: indentites.map((String e) => "$e.").toList(),
+                            cursorSymbol: '|',
+                            forwardAnimationDuration: const Duration(milliseconds: 200),
+                            reverseAnimationDuration: const Duration(milliseconds: 80),
+                            beforeAnimationDuration: const Duration(milliseconds: 1500),
+                            afterAnimationDuration: const Duration(milliseconds: 2000),
+                            cursorBlinkingDuration: const Duration(milliseconds: 400),
+                            textStyle: GoogleFonts.dmSerifText(
+                              textStyle: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width > 600
+                                        ? 64
+                                        : 64 *
+                                            MediaQuery.of(context).size.width /
+                                            600,
+                                fontWeight: FontWeight.bold,
+                                color: AdaptiveTheme.of(context)
+                                    .theme
+                                    .colorScheme
+                                    .secondary,
+                              ),
                             ),
+                            
                           ),
                         ),
                       ),
