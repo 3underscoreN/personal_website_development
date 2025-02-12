@@ -9,7 +9,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Future<void> _launchurl(String surl) async {
   final Uri url = Uri.parse(surl);
-  await launchUrl(url);
+  await launchUrl(url, webOnlyWindowName: "_self");
 }
 
 class Footer extends StatelessWidget {
@@ -31,7 +31,7 @@ class Footer extends StatelessWidget {
               children: <Widget>[
                 MediaQuery.of(context).size.width > 600
                     ? Text(
-                        "Made with <3 by 3_n using Flutter  |  Hosted on GitHub Pages",
+                        "Made with <3 by 3_n |  Hosted on GitHub Pages",
                         style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
                               fontSize: 16, color: Colors.white),
@@ -44,7 +44,7 @@ class Footer extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "Made with <3 by 3_n w/ ",
+                                "Made with <3 by 3_n",
                                 style: GoogleFonts.montserrat(
                                   textStyle: const TextStyle(
                                       fontSize: 16, color: Colors.white),

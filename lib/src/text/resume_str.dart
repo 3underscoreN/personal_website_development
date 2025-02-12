@@ -8,7 +8,7 @@ const Map<String, List<Map<String, String>>>resumeStr = {
     {
       "title" : "Exchange Student",
       "subtitle" : "National Taiwan University / 2024 Fall",
-      "description" : "Staying in Taiwan for a semester taking courses in electrical engineering to broaden my horizons on electricty, and auditing transportation engineering as a side hobby.",
+      "description" : "Staying in Taiwan for a semester taking courses in different disciplines to broaden my horizons, and auditing transportation engineering as a side hobby.",
     },
     {
       "title" : "High School",
