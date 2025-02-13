@@ -16,7 +16,7 @@ import 'package:personal_website/src/controllers/scroll_controllers.dart';
 import 'package:personal_website/src/components/intro.dart';
 import 'package:personal_website/src/components/about.dart';
 import 'package:personal_website/src/components/resume.dart';
-import 'package:personal_website/src/components/games.dart';
+// import 'package:personal_website/src/components/games.dart';
 import 'package:personal_website/src/components/footer.dart';
 
 import 'package:animated_snack_bar/animated_snack_bar.dart';
@@ -55,7 +55,13 @@ class HomeScrollView extends StatefulWidget {
 
 class _HomeScrollViewState extends State<HomeScrollView> {
 
-  static const List<Widget> viewList = [Intro(), About(), Resume(), Games(), Footer()];
+  static const List<Widget> viewList = [
+    Intro(), 
+    About(), 
+    Resume(), 
+    //Games(), 
+    Footer(),
+    ];
 
   @override
   void initState() {

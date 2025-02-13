@@ -69,6 +69,7 @@ class About extends StatelessWidget {
                           text: ".",
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
                               fontSize: 28,
                               color: AdaptiveTheme.of(context)
                                   .theme
