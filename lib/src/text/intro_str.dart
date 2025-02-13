@@ -1,6 +1,6 @@
-const List<String> indentites = [
+const List<String> identities = [
   "student",
-  "programmer",
+  "developer",
   "gamer",
   "companion",
 ];

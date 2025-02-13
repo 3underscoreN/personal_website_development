@@ -81,7 +81,7 @@ class Intro extends StatelessWidget {
                         child: SizedBox(
                           width: 450,
                           child: TypewriteText(
-                            linesOfText: indentites.map((String e) => "$e.").toList(),
+                            linesOfText: identities.map((String e) => "$e.").toList(),
                             cursorSymbol: '|',
                             forwardAnimationDuration: const Duration(milliseconds: 200),
                             reverseAnimationDuration: const Duration(milliseconds: 80),
