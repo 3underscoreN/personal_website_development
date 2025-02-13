@@ -150,43 +150,92 @@ class About extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 18),
+          const SizedBox(
+            height: 18,
+          ),
           Container(
             padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
-            child: SizedBox(
-              height: 36,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "I am interested in ",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: 18,
-                        color:
-                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                      ),
+            child: MediaQuery.of(context).size.width > 700
+                ? SizedBox(
+                    height: 36,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "I am interested in ",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              color: AdaptiveTheme.of(context)
+                                  .theme
+                                  .colorScheme
+                                  .onSurface,
+                            ),
+                          ),
+                        ),
+                        DefaultTextStyle(
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              color: AdaptiveTheme.of(context)
+                                  .theme
+                                  .colorScheme
+                                  .onSurface,
+                            ),
+                          ),
+                          child: AnimatedTextKit(
+                            pause: const Duration(milliseconds: 500),
+                            repeatForever: true,
+                            animatedTexts: interests
+                                .map((String e) => RotateAnimatedText("$e."))
+                                .toList(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : SizedBox(
+                    height: 90,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "I am interested in ",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              color: AdaptiveTheme.of(context)
+                                  .theme
+                                  .colorScheme
+                                  .onSurface,
+                            ),
+                          ),
+                        ),
+                        DefaultTextStyle(
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              color: AdaptiveTheme.of(context)
+                                  .theme
+                                  .colorScheme
+                                  .onSurface,
+                            ),
+                          ),
+                          child: SizedBox(
+                            height: 48,
+                            child: AnimatedTextKit(
+                              pause: const Duration(milliseconds: 500),
+                              repeatForever: true,
+                              animatedTexts: interests
+                                  .map((String e) => RotateAnimatedText("$e."))
+                                  .toList(),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  DefaultTextStyle(
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: 18,
-                        color:
-                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
-                      ),
-                    ),
-                    child: AnimatedTextKit(
-                      pause: const Duration(milliseconds: 500),
-                      repeatForever: true,
-                      animatedTexts: interests
-                          .map((String e) => RotateAnimatedText("$e."))
-                          .toList(),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ),
         ],
       ),
