@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
+
 import 'package:personal_website/src/text/about_str.dart';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
@@ -147,7 +149,45 @@ class About extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          const SizedBox(height: 18),
+          Container(
+            padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
+            child: SizedBox(
+              height: 36,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "I am interested in ",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+                  DefaultTextStyle(
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                        color:
+                            AdaptiveTheme.of(context).theme.colorScheme.onSurface,
+                      ),
+                    ),
+                    child: AnimatedTextKit(
+                      pause: const Duration(milliseconds: 500),
+                      repeatForever: true,
+                      animatedTexts: interests
+                          .map((String e) => RotateAnimatedText("$e."))
+                          .toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
