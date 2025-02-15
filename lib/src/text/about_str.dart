@@ -6,6 +6,7 @@ const List<String> interests = [
   "building apps for people",
   "playing different games",
   "mental health",
-  "road design",
+  "playing the tuba",
+  "road design & traffic engineering",
   "learning new things",
 ];
