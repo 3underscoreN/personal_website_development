@@ -31,16 +31,16 @@ final StarFieldConfig lightThemeStarFieldConfig = StarFieldConfig(
   seed: 114514,
 );
 
-const lightThemeBackground = BoxDecoration(
-  gradient: LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-      Color.fromARGB(255, 77, 204, 142),
-      Color.fromARGB(255, 77, 204, 142),
-      Color.fromARGB(255, 56, 112, 94),
-      // Color.fromARGB(255, 125, 47, 113),
-      // Color.fromARGB(255, 61, 10, 54),
-    ],
-  ),
-);
+// const lightThemeBackground = BoxDecoration(
+//   gradient: LinearGradient(
+//     begin: Alignment.topLeft,
+//     end: Alignment.bottomRight,
+//     colors: [
+//       Color.fromARGB(255, 77, 204, 142),
+//       Color.fromARGB(255, 77, 204, 142),
+//       Color.fromARGB(255, 56, 112, 94),
+//       // Color.fromARGB(255, 125, 47, 113),
+//       // Color.fromARGB(255, 61, 10, 54),
+//     ],
+//   ),
+// ); // unused and replaced by aurora_background
