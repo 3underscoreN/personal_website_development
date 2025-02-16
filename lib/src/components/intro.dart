@@ -17,18 +17,20 @@ class Intro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AdaptiveTheme.of(context).theme;
+    final size = MediaQuery.of(context).size;
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: AuroraBackground(
         backgroundColors:
-            AdaptiveTheme.of(context).theme.brightness == Brightness.light
+            theme.brightness == Brightness.light
                 ? lightThemeAuroraColors
                 : darkThemeAuroraColors,
-        waveDurations: const <int>[8, 16, 24],
-        waveHeightMultiplier: 0.15,
+        waveDurations: const <int>[12, 24, 48],
+        waveHeightMultiplier: 0.2,
         baseHeightMultiplier: 0.5,
         starFieldConfig:
-            AdaptiveTheme.of(context).theme.brightness == Brightness.light
+            theme.brightness == Brightness.light
                 ? lightThemeStarFieldConfig
                 : darkThemeStarFieldConfig,
         child: Stack(
@@ -36,7 +38,7 @@ class Intro extends StatelessWidget {
             const PersonalImage(),
             Container(
               margin: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width > 600 ? 64.0 : 16.0,
+                  size.width > 600 ? 64.0 : 16.0,
                   128.0,
                   16.0,
                   128.0),
@@ -49,12 +51,11 @@ class Intro extends StatelessWidget {
                       "Hi, I'm Kelvin.",
                       style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width > 600
+                          fontSize: size.width > 600
                               ? 64
-                              : 64 * MediaQuery.of(context).size.width / 600,
+                              : 64 * size.width / 600,
                           fontWeight: FontWeight.bold,
-                          color: AdaptiveTheme.of(context)
-                              .theme
+                          color: theme
                               .colorScheme
                               .onPrimary,
                         ),
@@ -71,14 +72,13 @@ class Intro extends StatelessWidget {
                           "I'm a ",
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
-                              fontSize: MediaQuery.of(context).size.width > 600
+                              fontSize: size.width > 600
                                   ? 64
                                   : 64 *
-                                      MediaQuery.of(context).size.width /
+                                      size.width /
                                       600,
                               fontWeight: FontWeight.bold,
-                              color: AdaptiveTheme.of(context)
-                                  .theme
+                              color: theme
                                   .colorScheme
                                   .onPrimary,
                             ),
@@ -106,14 +106,13 @@ class Intro extends StatelessWidget {
                             textStyle: GoogleFonts.dmSerifText(
                               textStyle: TextStyle(
                                 fontSize:
-                                    MediaQuery.of(context).size.width > 600
+                                    size.width > 600
                                         ? 64
                                         : 64 *
-                                            MediaQuery.of(context).size.width /
+                                            size.width /
                                             600,
                                 fontWeight: FontWeight.bold,
-                                color: AdaptiveTheme.of(context)
-                                    .theme
+                                color: theme
                                     .colorScheme
                                     .secondary,
                               ),
