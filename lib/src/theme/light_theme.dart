@@ -24,11 +24,26 @@ const lightThemeAuroraColors = <Color> [
   Color.fromARGB(255, 68, 183, 252)
 ];
 
-final StarFieldConfig lightThemeStarFieldConfig = StarFieldConfig(
-  starCount: 4,
-  maxStarSize: 0.1,
-  starColor: Colors.white.withAlpha((255 * 0.8).round()),
-  seed: 114514,
+const lightThemeWaveColors = <List<Color>>[
+  [
+    Color.fromARGB(100, 249, 244, 232),
+    Color.fromARGB(100, 249, 244, 232),
+    Color.fromARGB(100, 249, 244, 232),
+  ],
+  [
+    Color.fromARGB(180, 244, 235, 222),
+    Color.fromARGB(180, 244, 235, 222),
+    Color.fromARGB(180, 244, 235, 222),
+  ],
+  [
+    Color.fromARGB(200, 244, 235, 222),
+    Color.fromARGB(200, 244, 235, 222),
+    Color.fromARGB(200, 244, 235, 222),
+  ],
+];
+
+const StarFieldConfig lightThemeStarFieldConfig = StarFieldConfig(
+  starCount: 0,
 );
 
 // const lightThemeBackground = BoxDecoration(

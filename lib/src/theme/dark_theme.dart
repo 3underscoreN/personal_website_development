@@ -18,11 +18,28 @@ final ThemeData darkTheme = ThemeData(
   useMaterial3: true,
 );
 
-
-const darkThemeAuroraColors = <Color> [
+const darkThemeAuroraColors = <Color>[
   Color.fromARGB(255, 11, 16, 38),
   Color.fromARGB(255, 27, 39, 53),
   Color.fromARGB(255, 44, 62, 80)
+];
+
+const darkThemeWaveColors = <List<Color>>[
+  [
+    Color.fromARGB(85, 140, 232, 255),
+    Color.fromARGB(85, 140, 232, 255),
+    Color.fromARGB(85, 140, 232, 255)
+  ],
+  [
+    Color.fromARGB(85, 135, 255, 155),
+    Color.fromARGB(85, 135, 255, 155),
+    Color.fromARGB(85, 135, 255, 155),
+  ],
+  [
+    Color.fromARGB(85, 185, 135, 255),
+    Color.fromARGB(85, 185, 135, 255),
+    Color.fromARGB(85, 185, 135, 255),
+  ],
 ];
 
 final StarFieldConfig darkThemeStarFieldConfig = StarFieldConfig(
