@@ -24,9 +24,9 @@ const lightThemeAuroraColors = <Color> [
   Color.fromARGB(255, 68, 183, 252)
 ];
 
-final StarFieldConfig darkThemeStarFieldConfig = StarFieldConfig(
-  starCount: 100,
-  maxStarSize: 0.3,
+final StarFieldConfig lightThemeStarFieldConfig = StarFieldConfig(
+  starCount: 4,
+  maxStarSize: 0.1,
   starColor: Colors.white.withAlpha((255 * 0.8).round()),
   seed: 114514,
 );
