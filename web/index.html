@@ -38,6 +38,13 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!-- Script to prevent PWA installation prompt as it was not meant to be one -->
+  <script>
+    window.addEventListener("beforeinstallprompt", function(e) {
+        e.preventDefault();
+        return false;
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
