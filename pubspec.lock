@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  aurora_background:
+    dependency: "direct main"
+    description:
+      name: aurora_background
+      sha256: "7618715885e4753cf0fdaf06f5e72ff8be19857f6137ef8a5874efe58d15d0cc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -574,5 +582,5 @@ packages:
     source: hosted
     version: "1.0.4"
 sdks:
-  dart: ">=3.5.0 <4.0.0"
+  dart: ">=3.5.4 <4.0.0"
   flutter: ">=3.24.0"

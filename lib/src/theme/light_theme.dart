@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:aurora_background/star_field.dart';
 
 final ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme(
@@ -15,6 +16,19 @@ final ThemeData lightTheme = ThemeData(
     onTertiary: Color.fromARGB(255, 194, 255, 225),
   ),
   useMaterial3: true,
+);
+
+const lightThemeAuroraColors = <Color> [
+  Color.fromARGB(255, 159, 233, 252),
+  Color.fromARGB(255, 92, 204, 252),
+  Color.fromARGB(255, 68, 183, 252)
+];
+
+final StarFieldConfig darkThemeStarFieldConfig = StarFieldConfig(
+  starCount: 100,
+  maxStarSize: 0.3,
+  starColor: Colors.white.withAlpha((255 * 0.8).round()),
+  seed: 114514,
 );
 
 const lightThemeBackground = BoxDecoration(
