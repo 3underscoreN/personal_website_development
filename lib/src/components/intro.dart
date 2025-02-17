@@ -26,7 +26,7 @@ class Intro extends StatelessWidget {
             theme.brightness == Brightness.light
                 ? lightThemeAuroraColors
                 : darkThemeAuroraColors,
-        waveDurations: const <int>[12, 24, 48],
+        waveDurations: const <int>[8, 12, 32],
         waveColors: theme.brightness == Brightness.light
             ? lightThemeWaveColors
             : darkThemeWaveColors,
