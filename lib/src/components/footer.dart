@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:personal_website/src/text/footer_link.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Future<void> _launchurl(String surl) async {
@@ -70,7 +72,7 @@ class Footer extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () async {
-                        await _launchurl("mailto:cychandt@connect.ust.hk");
+                        await _launchurl(links["email"]!);
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.envelope,
@@ -83,8 +85,7 @@ class Footer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        await _launchurl(
-                            "https://www.linkedin.com/in/chung-yuk-chan-6a2742241/");
+                        await _launchurl(links["linkedin"]!);
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.linkedin,
@@ -97,8 +98,7 @@ class Footer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        await _launchurl(
-                            "https://www.facebook.com/chungyuk.chan.5");
+                        await _launchurl(links["facebook"]!);
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.facebook,
@@ -111,8 +111,7 @@ class Footer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        await _launchurl(
-                            "https://www.instagram.com/f.prime.of.x/");
+                        await _launchurl(links["instagram"]!);
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.instagram,
@@ -125,7 +124,7 @@ class Footer extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        await _launchurl("https://github.com/3underscoreN");
+                        await _launchurl(links["github"]!);
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.github,
