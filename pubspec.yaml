@@ -48,7 +48,7 @@ dependencies:
   animated_snack_bar: ^0.4.0
   flutter_animate:
   animated_text_kit:
-  aurora_background:
+  aurora_background: ^1.0.2
 
 dev_dependencies:
   flutter_test:
