@@ -18,6 +18,11 @@ const Map<String, List<Map<String, String>>>resumeStr = {
   ],
   "experience" : [
     {
+      "title": "Part time student helper",
+      "subtitle": "Undergraduate Recruitment and Admissions Office, HKUST / Feb 2025 - Present",
+      "description" : "Assisting in daily office operations. Mostly handling affairs related to office supplies as of now."
+    },
+    {
       "title" : "Full time student helper",
       "subtitle" : "Undergraduate Recruitment and Admissions Office, HKUST / Jun - Aug 2023 & 2024",
       "description" : "Data preperation and presenting. Checking figures to ensure consistency across different reports, generating yearly reports for the year's figures.",
