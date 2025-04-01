@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repo is no longer in active development nor deployed.
+
 # 3_n's personal website
 
 ## Introduction
